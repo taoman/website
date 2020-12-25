@@ -4,20 +4,65 @@ import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
 
-const routes: Array<RouteConfig> = [
+//修改原型对象中的push方法
+const originalPush: any = VueRouter.prototype.push;
+VueRouter.prototype.push = function push(location: any) {
+  return originalPush.call(this, location).catch((err: any) => err);
+};
+export const routes: Array<RouteConfig> = 
+[
   {
-    path: "/",
-    name: "Home",
-    component: Home
-  },
-  {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
+    path: "",
+    name: "index",
+    redirect: "/home",
+    component: () => import("@/components/Layout/index.vue"),
+    meta: {
+      title: "首页"
+    },
+    children: [
+      {
+        path: "/home",
+        name: "Home",
+        component: () => import("@/views/Home.vue"),
+        meta: {
+          title: "Home"
+        }
+      },
+      {
+        path: "/illustration",
+        name: "illustration",
+        component: () => import("@/views/BlankPage.vue"),
+        children: [
+          {
+            path: "/ps",
+            name: "ps",
+            component: () => import("@/views/illustration/ps/index.vue"),
+            meta: {
+              title: "ps"
+            }
+          },
+          {
+            path: "/ai",
+            name: "ai",
+            component: () => import("@/views/illustration/ai/index.vue"),
+            meta: {
+              title: "ai"
+            }
+          }
+        ],
+        meta: {
+          title: "illustration"
+        }
+      },
+      {
+        path: "/blog",
+        name: "Blog",
+        component: () => import("@/views/blog/index.vue"),
+        meta: {
+          title: "taoman"
+        }
+      }
+    ]
   }
 ];
 
