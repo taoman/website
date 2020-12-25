@@ -1,6 +1,6 @@
 <template>
   <div>
-    首页
+    这是首页banner
   </div>
 </template>
 
