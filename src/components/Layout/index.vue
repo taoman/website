@@ -2,16 +2,16 @@
  * @Descripttion: 
  * @Author: taoman
  * @Date: 2020-12-16 14:37:22
- * @LastEditors: taoman
- * @LastEditTime: 2020-12-23 16:28:25
+ * @LastEditors: yzj
+ * @LastEditTime: 2020-12-26 14:42:47
 -->
 <template>
   <div>
     <a-layout>
     <a-layout-header class="layout-header"><Banner/></a-layout-header>
     <a-layout>
-    <a-layout-header> <AppHeader /></a-layout-header>
-    <AppContent />
+    <a-layout-header> <a-affix ><AppHeader /></a-affix></a-layout-header>
+    <a-layout-content><AppContent /></a-layout-content>
     </a-layout>
     </a-layout>
   </div>

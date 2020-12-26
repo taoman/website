@@ -24,16 +24,16 @@ import { routes } from '@/router'
 import { Menu } from 'ant-design-vue'
 const SubMenu = {
     template: `
-      <a-sub-menu :key="menuInfo.key" v-bind="$props" v-on="$listeners" style='background-color:red'>
+      <a-sub-menu :key="menuInfo.key" v-bind="$props" v-on="$listeners">
         <span slot="title">
           <a-icon type="mail" /><span>{{ menuInfo.meta.title }}</span>
         </span>
         <template v-for="item in menuInfo.children">
-          <a-menu-item v-if="!item.children" :key="item.path + '$' + item.name" style='background-color:red'>
+          <a-menu-item v-if="!item.children" :key="item.path + '$' + item.name">
             <a-icon type="pie-chart" />
             <span>{{ item.meta.title }}</span>
           </a-menu-item>
-          <sub-menu v-else :key="item.path" :menu-info="item" style='background-color:red'/>
+          <sub-menu v-else :key="item.path" :menu-info="item" />
         </template>
       </a-sub-menu>
     `,
@@ -69,20 +69,25 @@ export default class AppHeader extends Vue {
 </script>
 <style lang="less">
 @ant-background:#FBD786;
-  div .ant-menu-submenu ul{
-    background: green;
-  }
-  /deep/ div .ant-menu-submenu .ant-menu ,/deep/ .ant-menu-submenu > .ant-menu {
-      background: @ant-background;
-  }
-    .ant-menu .ant-menu-vertical .ant-menu-sub .ant-menu-submenu-content {
+.ant-menu{
+        height: 64px;
+        line-height: 64px;
         background: @ant-background;
     }
-    .ant-menu-item {
-        background: @ant-background;
-    }
-    .ant-menu-submenu-popup {
-        background: @ant-background;
-    }
+//   ul{
+//     background: @ant-background !important;
+//   }
+//   /deep/ div .ant-menu-submenu .ant-menu ,/deep/ .ant-menu-submenu > .ant-menu {
+//       background: @ant-background;
+//   }
+//     .ant-menu .ant-menu-vertical .ant-menu-sub .ant-menu-submenu-content {
+//         background: @ant-background;
+//     }
+//     .ant-menu-item {
+//         background: @ant-background;
+//     }
+//     .ant-menu-submenu-popup {
+//         background: @ant-background;
+//     }
 
 </style>

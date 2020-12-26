@@ -2,11 +2,11 @@
  * @Descripttion: 
  * @Author: taoman
  * @Date: 2020-12-21 14:28:09
- * @LastEditors: taoman
- * @LastEditTime: 2020-12-21 14:28:10
+ * @LastEditors: yzj
+ * @LastEditTime: 2020-12-26 14:40:06
 -->
 <template>
-  <div>
+  <div class="content">
       <router-view></router-view>
   </div>
 </template>
@@ -23,4 +23,10 @@ export default class  extends Vue {
 
 </script>
 
-<style lang='less' scoped></style>
+<style lang='less' scoped>
+.content{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+</style>

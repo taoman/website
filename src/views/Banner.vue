@@ -1,7 +1,7 @@
 <template>
     <div class="banner" id="banner">
         <!-- 加载层 -->
-        <div class="bg back"><h1>主页</h1></div>
+        <div class="bg back"><h1></h1></div>
         <!-- 角贴 -->
         <div class="fork-me">
             <a
@@ -20,9 +20,8 @@
                 <img draggable="false" src="../assets/images/avatar.jpg" />
             </span>
             <div>
-                <!-- <h1>{{ banner.title || 'taoman' }}</h1> -->
+                <h1>{{ banner.title || 'taoman' }}</h1>
                 <h3 class="typer white">
-                    taoman，
                     <vue-typer
                         :text="banner.desc"
                         :type-delay="200"
@@ -92,12 +91,13 @@ export default class extends Vue {
             width: 160px;
             height: 160px;
             line-height: 160px;
+            margin-bottom: 10%;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
     }
     @media screen and(max-width: @screen-sm-min) {
         h1 {
-            font-size: 2.3em;
+            font-size: 2em;
         }
         h3 {
             font-size: 1.3em;
