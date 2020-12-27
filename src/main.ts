@@ -6,10 +6,15 @@ import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.css';
 
 import "@/assets/less/main.less";
+//全局swiper
+import VueAwesomeSwiper from 'vue-awesome-swiper';
+import 'swiper/swiper-bundle.min.css';//样式
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';//导入模组
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);//使用模组
 
 Vue.config.productionTip = false;
 
-Vue.use(Antd);
+Vue.use(Antd,VueAwesomeSwiper);
 new Vue({
   router,
   store,
