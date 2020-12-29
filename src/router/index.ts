@@ -28,32 +28,32 @@ export const routes: Array<RouteConfig> =
           title: "Home"
         }
       },
-      {
-        path: "/illustration",
-        name: "illustration",
-        component: () => import("@/views/BlankPage.vue"),
-        children: [
-          {
-            path: "/ps",
-            name: "ps",
-            component: () => import("@/views/illustration/ps/index.vue"),
-            meta: {
-              title: "ps"
-            }
-          },
-          {
-            path: "/ai",
-            name: "ai",
-            component: () => import("@/views/illustration/ai/index.vue"),
-            meta: {
-              title: "ai"
-            }
-          }
-        ],
-        meta: {
-          title: "illustration"
-        }
-      },
+      // {
+      //   path: "/illustration",
+      //   name: "illustration",
+      //   component: () => import("@/views/BlankPage.vue"),
+      //   children: [
+      //     {
+      //       path: "/ps",
+      //       name: "ps",
+      //       component: () => import("@/views/illustration/ps/index.vue"),
+      //       meta: {
+      //         title: "ps"
+      //       }
+      //     },
+      //     {
+      //       path: "/ai",
+      //       name: "ai",
+      //       component: () => import("@/views/illustration/ai/index.vue"),
+      //       meta: {
+      //         title: "ai"
+      //       }
+      //     }
+      //   ],
+      //   meta: {
+      //     title: "illustration"
+      //   }
+      // },
       {
         path: "/blog",
         name: "Blog",
