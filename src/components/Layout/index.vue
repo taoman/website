@@ -3,7 +3,7 @@
  * @Author: taoman
  * @Date: 2020-12-16 14:37:22
  * @LastEditors: taoman
- * @LastEditTime: 2020-12-31 13:24:11
+ * @LastEditTime: 2020-12-31 14:01:01
 -->
 <template>
     <div>
@@ -13,6 +13,7 @@
                 <a-layout-sider class="layout-sider" width="320"
                     ><a-affix><AppSlider /></a-affix
                 ></a-layout-sider>
+
                 <a-layout class="layout-content">
                     <!-- 小屏侧边栏抽屉按钮 -->
                     <a-affix>
@@ -29,16 +30,20 @@
                         ></a-button>
                     </a-affix>
                     <!-- 正文锚点 -->
-                    <a-layout-content
+                    <!-- <a-layout-content
                         ><div id="anchor-next"></div
-                    ></a-layout-content>
-                    
-                    <a-layout-content>
+                    ></a-layout-content> -->
+                    <a-layout-content id="anchor-next">
                         <AppContent></AppContent>
                     </a-layout-content>
                     <!-- <a-layout-footer><Footer/></a-layout-footer> -->
                 </a-layout>
+
             </a-layout>
+            <!-- 小屏侧边栏抽屉 -->
+        <a-drawer placement="left" :closable="true" :visible="menuDrawerVisible" @close="onMenuDrawerClose">
+            <AppSlider @menuClick="onMenuDrawerClose" />
+        </a-drawer>
         </a-layout>
     </div>
 </template>
@@ -61,6 +66,9 @@ export default class extends Vue {
     toggleMenuDrawer() {
         this.menuDrawerVisible = !this.menuDrawerVisible
     }
+    private onMenuDrawerClose() {
+            this.menuDrawerVisible = false;
+        }
 }
 </script>
 
@@ -80,7 +88,6 @@ export default class extends Vue {
         position: absolute;
         top: 20px;
         z-index: 99999;
-
 
         &.drawer-closed {
             left: 20px;

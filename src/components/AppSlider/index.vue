@@ -13,7 +13,7 @@
                 <!-- 根据配置动态模块的内容和顺序 -->
                 <a-menu-item v-for="m in menus" :key="m.name">
                     <a-icon :type="m.meta.icon" />
-                    <router-link :to="{name:'m.name'}">{{m.meta.title}}</router-link>
+                    <a v-smooth-scroll :href="'#' + m.name" @click="closeMenuDrawer">{{m.meta.title}}</a>
                 </a-menu-item>
             </a-menu>
         </a-layout-content>
@@ -31,8 +31,6 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
 import { routes } from '@/router'
-import { Menu } from 'ant-design-vue';
-import router from '@/router';
 @Component({
     components: {  }
 })
@@ -42,24 +40,18 @@ export default class AppHeader extends Vue {
             title: 'taoman',
             desc: ['爱旅行的美食家','原画爱好者']
         }
-    // menus = [
-    //     {
-    //     id: "home",
-    //     icon: "idcard",
-    //     name: "首页"
-    //   },
-    //     {
-    //     id: "about",
-    //     icon: "global",
-    //     name: "关于"
-    //   }
-    // ]
     get menus() {
         return routes[0]?.children;
     }
-    closeMenuDrawer(val:any){
-        console.log(val)
-    }
+    private closeMenuDrawer() {
+            this.$emit('menuClick');
+        }
+    // onMenuclick(event:any){
+    //     this.$emit('menuClick');
+    //     this.$router.push({
+    //         name:event.key
+    //     })
+    // }
 }
 </script>
 <style lang="less">
@@ -75,9 +67,10 @@ export default class AppHeader extends Vue {
         .header {
             margin: 2rem auto;
             .avatar {
-                width: 80px;
-                height: 80px;
-                line-height: 80px;
+                width: 100px;
+                height: 100px;
+                line-height: 100px;
+                border: 1px dotted #888;
             }
             span {
                 display: block;
