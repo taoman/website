@@ -1,13 +1,6 @@
-<!--
- * @Descripttion: 
- * @Author: taoman
- * @Date: 2020-12-14 16:51:03
- * @LastEditors: taoman
- * @LastEditTime: 2020-12-14 16:51:03
--->
 <template>
   <div>
-    ps
+      illustration
   </div>
 </template>
 

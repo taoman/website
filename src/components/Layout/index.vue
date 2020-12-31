@@ -3,7 +3,7 @@
  * @Author: taoman
  * @Date: 2020-12-16 14:37:22
  * @LastEditors: taoman
- * @LastEditTime: 2020-12-29 17:04:40
+ * @LastEditTime: 2020-12-31 13:24:11
 -->
 <template>
     <div>
@@ -11,7 +11,7 @@
             <a-layout-header class="layout-header"><Banner /></a-layout-header>
             <a-layout>
                 <a-layout-sider class="layout-sider" width="320"
-                    ><a-affix><AppHeader /></a-affix
+                    ><a-affix><AppSlider /></a-affix
                 ></a-layout-sider>
                 <a-layout class="layout-content">
                     <!-- 小屏侧边栏抽屉按钮 -->
@@ -32,12 +32,9 @@
                     <a-layout-content
                         ><div id="anchor-next"></div
                     ></a-layout-content>
-                    <a-layout-content v-for="id in moduleIds" :key="id">
-                        <!-- {{ id }} -->
-                        <Blog></Blog>
-                        <!-- <About v-if="id === 'about'"/>
-                    <Blog v-if="id === 'blog'"/>
-                    <Experience v-if="id === 'experience'"/> -->
+                    
+                    <a-layout-content>
+                        <AppContent></AppContent>
                     </a-layout-content>
                     <!-- <a-layout-footer><Footer/></a-layout-footer> -->
                 </a-layout>
@@ -47,21 +44,19 @@
 </template>
 
 <script lang=ts>
-import { Vue, Component } from 'vue-property-decorator'
-import AppHeader from '@/components/AppHeader/index.vue'
-import AppContent from '@/components/AppContent/index.vue'
+import { Vue, Component } from 'vue-property-decorator';
+import AppSlider from '@/components/AppSlider/index.vue';
+import AppContent from '@/components/AppContent/index.vue';
 import Banner from '@/views/Banner.vue';
-import Blog from '@/views/blog/index.vue'
 @Component({
     components: {
         Banner,
-        AppHeader,
-        AppContent,
-        Blog
+        AppSlider,
+        AppContent
     }
 })
 export default class extends Vue {
-    moduleIds = ['第一部分', '第二部分','第三部分']
+    moduleIds = ['第一部分', '第二部分']
     menuDrawerVisible = false
     toggleMenuDrawer() {
         this.menuDrawerVisible = !this.menuDrawerVisible

@@ -9,60 +9,45 @@ const originalPush: any = VueRouter.prototype.push;
 VueRouter.prototype.push = function push(location: any) {
   return originalPush.call(this, location).catch((err: any) => err);
 };
-export const routes: Array<RouteConfig> = 
-[
+export const routes: Array<RouteConfig> = [
   {
     path: "",
     name: "index",
     redirect: "/home",
     component: () => import("@/components/Layout/index.vue"),
-    meta: {
-      title: "首页"
-    },
     children: [
       {
         path: "/home",
         name: "Home",
         component: () => import("@/views/Home.vue"),
         meta: {
+          icon: "idcard",
           title: "Home"
         }
       },
-      // {
-      //   path: "/illustration",
-      //   name: "illustration",
-      //   component: () => import("@/views/BlankPage.vue"),
-      //   children: [
-      //     {
-      //       path: "/ps",
-      //       name: "ps",
-      //       component: () => import("@/views/illustration/ps/index.vue"),
-      //       meta: {
-      //         title: "ps"
-      //       }
-      //     },
-      //     {
-      //       path: "/ai",
-      //       name: "ai",
-      //       component: () => import("@/views/illustration/ai/index.vue"),
-      //       meta: {
-      //         title: "ai"
-      //       }
-      //     }
-      //   ],
-      //   meta: {
-      //     title: "illustration"
-      //   }
-      // },
+      {
+        path: "/illustration",
+        name: "illustration",
+        component: () => import("@/views/illustration/index.vue"),
+        meta: {
+          icon: "ant-cloud",
+          title: "Illustration"
+        }
+      },
       {
         path: "/blog",
         name: "Blog",
         component: () => import("@/views/blog/index.vue"),
         meta: {
-          title: "taoman"
+          icon: "global",
+          title: "Blog"
         }
       }
-    ]
+    ],
+
+    meta: {
+      title: "首页"
+    }
   }
 ];
 

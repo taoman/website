@@ -11,10 +11,9 @@
         <a-layout-content class="menu">
             <a-menu>
                 <!-- 根据配置动态模块的内容和顺序 -->
-                <a-menu-item v-for="m in menus" v-bind:key="m.id">
-                    <a-icon :type="m.icon" />
-                    <router-link :to="{name:'Blog'}">{{m.name}}</router-link>
-                    <!-- <a  :href="'#' + m.id" @click="closeMenuDrawer">{{m.name}}</a> -->
+                <a-menu-item v-for="m in menus" :key="m.name">
+                    <a-icon :type="m.meta.icon" />
+                    <router-link :to="{name:'m.name'}">{{m.meta.title}}</router-link>
                 </a-menu-item>
             </a-menu>
         </a-layout-content>
@@ -32,7 +31,8 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
 import { routes } from '@/router'
-import { Menu } from 'ant-design-vue'
+import { Menu } from 'ant-design-vue';
+import router from '@/router';
 @Component({
     components: {  }
 })
@@ -42,20 +42,20 @@ export default class AppHeader extends Vue {
             title: 'taoman',
             desc: ['爱旅行的美食家','原画爱好者']
         }
-    menus = [
-        {
-        id: "home",
-        icon: "idcard",
-        name: "首页"
-      },
-        {
-        id: "about",
-        icon: "global",
-        name: "关于"
-      }
-    ]
-    get routerList() {
-        return routes[0]?.children
+    // menus = [
+    //     {
+    //     id: "home",
+    //     icon: "idcard",
+    //     name: "首页"
+    //   },
+    //     {
+    //     id: "about",
+    //     icon: "global",
+    //     name: "关于"
+    //   }
+    // ]
+    get menus() {
+        return routes[0]?.children;
     }
     closeMenuDrawer(val:any){
         console.log(val)
