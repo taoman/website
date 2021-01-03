@@ -13,9 +13,18 @@ export const routes: Array<RouteConfig> = [
   {
     path: "",
     name: "index",
-    redirect: "/home",
+    // redirect: "/home",
     component: () => import("@/components/Layout/index.vue"),
     children: [
+      {
+        path: "/banner",
+        name: "banner",
+        component: () => import("@/views/Banner.vue"),
+        meta: {
+          icon: "idcard",
+          title: "Banner"
+        }
+      },
       {
         path: "/home",
         name: "Home",
@@ -27,7 +36,7 @@ export const routes: Array<RouteConfig> = [
       },
       {
         path: "/illustration",
-        name: "illustration",
+        name: "Illustration",
         component: () => import("@/views/illustration/index.vue"),
         meta: {
           icon: "ant-cloud",

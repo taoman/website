@@ -14,10 +14,12 @@ import VueAwesomeSwiper from 'vue-awesome-swiper';
 import 'swiper/swiper-bundle.min.css';//样式
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';//导入模组
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);//使用模组
-
+//平滑过渡
+import VueSmoothScroll from 'vue2-smooth-scroll';
 Vue.config.productionTip = false;
 
 Vue.use(Antd,VueAwesomeSwiper);
+Vue.use(VueSmoothScroll)
 new Vue({
   router,
   store,

@@ -2,11 +2,11 @@
  * @Descripttion: 
  * @Author: taoman
  * @Date: 2020-12-16 14:20:33
- * @LastEditors: taoman
- * @LastEditTime: 2020-12-30 14:24:26
+ * @LastEditors: yzj
+ * @LastEditTime: 2021-01-02 11:59:28
 -->
 <template>
-  <div>
+  <div id="Blog">
       blog页
   </div>
 </template>

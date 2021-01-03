@@ -1,6 +1,7 @@
 <template>
-  <div>
-      illustration
+  <div id="Illustration">
+      illustration页
+      
   </div>
 </template>
 
