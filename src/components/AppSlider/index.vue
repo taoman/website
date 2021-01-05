@@ -37,8 +37,7 @@ import { routes } from '@/router'
 export default class AppHeader extends Vue {
      banner = 
         {
-            title: 'taoman',
-            desc: ['爱旅行的美食家','原画爱好者']
+            title: 'taoman'
         }
     get menus() {
         return routes[0]?.children;

@@ -16,9 +16,9 @@
                 <img draggable="false" src="../assets/images/avatar.jpg">
             </span>
             <div>
-                <h1>{{banner.title || 'taoman'}}</h1>
+                <h1>{{userData.title || 'taoman'}}</h1>
                 <h3 class="typer white">
-                    <vue-typer :text="banner.desc || 'taoman'" :type-delay='200' eraseStyle='select-all'></vue-typer>
+                    <vue-typer :text="userData.banner.desc || 'taoman'" :type-delay='200' eraseStyle='select-all'></vue-typer>
                 </h3>
             </div>
         </div>
@@ -29,18 +29,25 @@
 </template>
 <script lang=ts>
 import { Vue, Component } from 'vue-property-decorator'
-import { VueTyper } from 'vue-typer'
+import { VueTyper } from 'vue-typer';
+import {UserInterface} from "@/interface/user/user-interface"
 @Component({
     components: {
         VueTyper
     }
 })
 export default class extends Vue {
-    banner = 
-        {
-            title: 'taoman',
-            desc: ['爱旅行的美食家','原画爱好者']
-        }
+    get userData(){
+        return this.$stores.userModel.userData
+    }
+    mounted() {
+    //  console.log(this.userData.banner.desc )  
+    }
+    // banner = 
+    //     {
+    //         title: 'taoman',
+    //         desc: ['爱旅行的美食家','原画爱好者']
+    //     }
 }
 </script>
 

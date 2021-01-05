@@ -1,28 +1,21 @@
 <template>
-  <div id="app">
+  <div>
     <router-view />
   </div>
 </template>
 
-<style lang="less">
-// #app {
-//   font-family: Avenir, Helvetica, Arial, sans-serif;
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-//   text-align: center;
-//   color: #2c3e50;
-// }
+<script lang=ts>
 
-// #nav {
-//   padding: 30px;
+import {Vue, Component} from 'vue-property-decorator';
 
-//   a {
-//     font-weight: bold;
-//     color: #2c3e50;
+@Component({})
 
-//     &.router-link-exact-active {
-//       color: #42b983;
-//     }
-//   }
-// }
-</style>
+export default class  extends Vue {
+mounted() {
+  this.$stores.userModel.getUserData()
+}
+}
+
+</script>
+
+<style lang='less' scoped></style>
