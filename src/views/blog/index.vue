@@ -3,10 +3,10 @@
  * @Author: taoman
  * @Date: 2020-12-16 14:20:33
  * @LastEditors: taoman
- * @LastEditTime: 2021-01-05 16:14:23
+ * @LastEditTime: 2021-01-07 16:04:49
 -->
 <template>
-  <div id="Blog">
+  <div class="Blog" id="Blog">
       blog页
   </div>
 </template>
@@ -17,7 +17,7 @@ import {Vue, Component} from 'vue-property-decorator';
 
 @Component({})
 
-export default class  extends Vue {
+export default class Blog extends Vue {
   mounted() {
     // this.user();
   }
@@ -27,4 +27,8 @@ export default class  extends Vue {
 
 </script>
 
-<style lang='less' scoped></style>
+<style lang='less' scoped>
+.Blog{
+  height: 100vh;
+}
+</style>

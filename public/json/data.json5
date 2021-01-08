@@ -1,0 +1,74 @@
+{
+  title: "taoman",
+    social: {
+      github: "https://github.com/manerfan"
+    },
+    banner: {
+      anchor: {
+        id: "banner",
+        icon: "home",
+        name: "首页",
+      },
+      title: "taoman",
+      desc: [
+        "北方汉子",
+        "爱旅行的美食家",
+        "原画爱好者"
+      ],
+    },
+    modules: [{
+        display: true,
+        anchor: {
+          id: "about",
+          icon: "user",
+          name: "关于"
+        },
+        header: {
+          title: "information",
+          subtitle: "about me",
+        },
+        content: {
+          name: "垃圾分类站",
+          desc: [
+            "落霞与孤鹜齐飞",
+            "秋水共长天一色",
+          ],
+        },
+        keys: {
+          "主页": "http://liquanquan.com"
+        },
+      },
+      {
+        display: true,
+        anchor: {
+          id: "experience",
+          icon: "idcard",
+          name: "经历"
+        },
+        header: {
+          title: "experience",
+          subtitle: "my experience",
+        },
+        cards: [{
+            title: "阿里巴巴（中国）网络技术有限公司",
+            subtitle: "2018-08 至 今",
+          }
+        ],
+      },
+      {
+        display: true,
+        anchor: {
+          id: "blog",
+          icon: "profile",
+          name: "博客",
+        },
+        header: {
+          title: "blog",
+          subtitle: "latest blog",
+        },
+        blog: "https://segmentfault.com/blog/manerfan",
+        rss: "https://segmentfault.com/feeds/blog/manerfan",
+      },
+    ]
+  
+}

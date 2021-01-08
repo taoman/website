@@ -4,12 +4,12 @@
 // }
 
 import Vue from "vue";
-import {UserType} from "@/api"
+import {UserApi} from "@/api"
 import {StoreType} from "@/store/store-entry"
 declare module "vue/types/vue" {
   interface Vue {
     $stores: StoreType
-    $api:UserType
+    $api:UserApi
   }
   // export default Vue;
 }

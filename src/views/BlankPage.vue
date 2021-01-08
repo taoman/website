@@ -19,7 +19,7 @@ import {Vue, Component} from 'vue-property-decorator';
 
 @Component({})
 
-export default class  extends Vue {
+export default class BlankPage extends Vue {
 
 }
 

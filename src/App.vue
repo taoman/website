@@ -10,10 +10,12 @@ import {Vue, Component} from 'vue-property-decorator';
 
 @Component({})
 
-export default class  extends Vue {
-mounted() {
-  this.$stores.userModel.getUserData()
+export default class App extends Vue {
+created() {
+  // this.$stores.userModel.init()
+  console.log(JSON.parse(sessionStorage.userData));
 }
+
 }
 
 </script>

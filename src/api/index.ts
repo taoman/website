@@ -3,13 +3,13 @@
  * @Author: taoman
  * @Date: 2021-01-04 13:14:48
  * @LastEditors: taoman
- * @LastEditTime: 2021-01-04 16:04:08
+ * @LastEditTime: 2021-01-06 13:26:17
  */
-import {UserApi, user } from "./user";
+import { UserApi,user } from "./user";
 interface UserType {
     user:UserApi
 }
 const $api:UserType = {
   user
 };
-export { $api,UserType };
+export { $api,UserApi };

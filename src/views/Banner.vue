@@ -18,7 +18,7 @@
             <div>
                 <h1>{{userData.title || 'taoman'}}</h1>
                 <h3 class="typer white">
-                    <vue-typer :text="userData.banner.desc || 'taoman'" :type-delay='200' eraseStyle='select-all'></vue-typer>
+                    <vue-typer :text="userData.desc || 'taoman'" :type-delay='200' eraseStyle='select-all'></vue-typer>
                 </h3>
             </div>
         </div>
@@ -36,18 +36,11 @@ import {UserInterface} from "@/interface/user/user-interface"
         VueTyper
     }
 })
-export default class extends Vue {
+export default class Banner extends Vue {
+    // userData:UserInterface.IndexData[] = []
     get userData(){
-        return this.$stores.userModel.userData
+        return JSON.parse(sessionStorage.userData)[0].banner
     }
-    mounted() {
-    //  console.log(this.userData.banner.desc )  
-    }
-    // banner = 
-    //     {
-    //         title: 'taoman',
-    //         desc: ['爱旅行的美食家','原画爱好者']
-    //     }
 }
 </script>
 

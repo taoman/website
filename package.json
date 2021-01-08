@@ -9,18 +9,22 @@
   },
   "dependencies": {
     "@types/json5": "0.0.30",
-    "json5": "^2.1.1",
     "ant-design-vue": "^1.7.2",
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "json5": "^2.1.1",
+    "lodash": "^4.17.20",
     "swiper": "^6.4.5",
     "vue": "^2.6.11",
     "vue-awesome-swiper": "^4.1.1",
     "vue-class-component": "^7.2.3",
+    "vue-markdown": "^2.2.4",
     "vue-property-decorator": "^8.4.2",
     "vue-router": "^3.2.0",
     "vue-typer": "^1.2.0",
     "vue2-smooth-scroll": "^1.5.0",
-    "vuex": "^3.4.0"
+    "vuex": "^3.4.0",
+    "vuex-module-decorators": "^1.0.1"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.33.0",

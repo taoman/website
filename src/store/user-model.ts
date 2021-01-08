@@ -3,7 +3,7 @@
  * @Author: taoman
  * @Date: 2021-01-04 11:30:41
  * @LastEditors: taoman
- * @LastEditTime: 2021-01-05 16:13:19
+ * @LastEditTime: 2021-01-07 15:19:36
  */
 import {
     Module,
@@ -17,16 +17,21 @@ import {UserInterface} from "@/interface/user/user-interface"
 import { $api } from "@/api";
   @Module({dynamic:true,store,name:"userStore"})
   export class UserStore extends VuexModule{
-    userData:UserInterface.Index[] = []
+    userData:UserInterface.IndexData[] = []
     @Mutation
-    STE_USER_DATA(data:UserInterface.Index[]){
-        console.log(data);
+    STE_USER_DATA(data:UserInterface.IndexData[]){
+        sessionStorage.userData = JSON.stringify(data)
         this.userData = data
+    }
+    @Action({ rawError: true })
+    @Action
+    async init(){
+      this.getUserData()
     }
     @Action
     async getUserData(){
         const res = await $api.user.userIndex()
-        this.STE_USER_DATA(res.data)
+        this.STE_USER_DATA(res.data.data)
     }
   }
 export const UserModel = getModule(UserStore)

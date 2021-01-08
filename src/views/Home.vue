@@ -1,81 +1,125 @@
 <template>
-  <div id="Home">
-    重温总书记的2020 2020 有你真好
-中国元首“云”外交 让世界看到“大国的样子”
-人民日报国纪平：事实胜于雄辩
-透过卫星图 看2020那些难忘瞬间 脱贫的喜悦什么样
-中欧投资协定为全球经济发展注入信心和动能
-中国经济从复苏走向再平衡靠的是什么？
-复兴号奔向“未来之城”！71项智能化设计彰显中国智慧
-中国新冠病毒疫苗上市，保护率为79.34%中国新冠病毒疫苗上市，保护率为79.34%
-科技部：目前无证据证明变异会对疫苗效果造成影响
-英国政客请求，不要再将变异病毒称为“源自英国”
-香港市民彻夜留守终院：呼吁撤销黎智英保释
-郭敬明承认抄袭向庄羽道歉：将赔偿相关版税收益
-1月新规来了，事关你的上学、买车、就医、纳税等
-年末7城密集出落户新政 还有1地落户新政在路上
-又挑衅！港媒：两艘美舰今晨穿航台湾海峡又挑衅！港媒：两艘美舰今晨穿航台湾海峡
-“霸王级”寒潮为啥这么冷？听听它自己怎么说
-婚前父母帮买房归谁？最高法明确这些婚姻大事
-民法典司法解释明确人工授精生子法律地位
-“冰川哥”坠入冰川：它的魔力，让他忘记了危险
-9岁女童被限制消费背后：多人接力守护孤儿身世秘密
-今日话题
-1月新规来了，事关你的上学、买车、就医、纳税等
-人民日报| 中国新冠病毒疫苗上市
-潜望| 那个改变香港金融市场的“外来人”，走了！
-谷雨| 一年过去，那些热点故事里的主人公怎样了？
-棱镜| “我房东看着挺土一人，但他拥有一栋楼！”
-贵圈| 采访完一位深陷舆论漩涡的男演员，我放弃了发稿
-较真| 父母出生地离得越远娃智商越高，真的吗？
-2021，送你一张船票
-年度记忆 | 我们的2020
-国防部：奉劝美方放下“锤子”，认清大势
-人民日报评论员：巩固拓展脱贫攻坚成果
-美国疫苗“曲速行动”缘何变成“慢动作”
-中欧投资协定是国际投资协定体制改革和升级的典范
-王毅同墨西哥外长通电话 同巴基斯坦外长通电话
-任内首次！特朗普对《国防授权法案》否决权被美国会推翻任内首次！特朗普对《国防授权法案》否决权被美国会推翻
-2021年一开始，这个国家就来个猛的！
-丢了中国市场怎么办？澳大利亚贸易部长：找印度
-外交部发言人用36种语言送“新年快乐”祝福
-张文宏：一半人接种疫苗，六七月会迎来拐点
-日媒称“中国制造”疫苗流入日本？驻日大使馆回应
-2020年最后一个工作日，省级党政“一把手”去了哪里？
-雄安新区实施居住证和积分落户制度！向各界英才敞开大门雄安新区实施居住证和积分落户制度！向各界英才敞开大门
-特朗普发表任内最后一次新年致辞：我们做的一切必被铭记
-乱港分子周庭升级为甲级犯 服刑期仍伺机宣传自己
-广西河池两名青年拒服兵役被通报，多部门联合惩戒
-上海发现首例来自英国的变异新冠病毒感染病例
-火了！图书馆两个机器人吵起来了，差点“动手”
-今日话题
-雄安新区实施居住证和积分落户制度
-人民日报| 评论员：牢牢把住粮食安全主动权
-谷雨| 一年过去，那些热点故事里的主人公怎样了？
-潜望| vivo倪旭东：一年发布19款5G手机 2021心态归零
-棱镜| “我房东看着挺土一人，但他拥有一栋楼！”
-贵圈| 采访完一位深陷舆论漩涡的男演员，我放弃了发稿
-较真| 这8种病“饿一下全消失”？专家亲自打脸：我可没说过
-十三邀
-完整版 | 五条人：小镇青年逆袭成全网顶流完整版 | 五条人：小镇青年逆袭成全网顶流
-[看点] 仁科小时候梦想当画家 已经准备穷困潦倒一辈子
-[看点] 阿茂自称高考时报导游专业 那时候只想玩
-少年π| 英雄联盟兮夜独家纪实 在WE的最后一年
-巅锋| 年轻一代脆弱敏感无病呻吟？郑钧：阅历不够
-智慧talk| 从供应商到服务商，
-  </div>
+    <div class="content about" id="Home">
+        <ModuleHeader :title="about.header.title" :sub-title="about.header.subtitle"/>
+        <ModuleSkeleton :display="true" :number="2" />
+        <a-row type="flex" justify="center" align="top">
+            <!-- 头像 -->
+            <a-col class="col" :xs="24" :sm="24" :md="24" :lg="10" :xl="8">
+                <img data-aos="fade-in" class="avatar" draggable="false" src="../assets/images/avatar.jpg"/>
+            </a-col>
+            <!-- 内容 -->
+            <a-col class="color-content col" :xs="24" :sm="24" :md="24" :lg="14" :xl="16">
+                <!-- title -->
+                <span data-aos="fade-in" class="title color-title">{{about.header.subtitle}}</span>
+                <!-- 简介 -->
+                <span data-aos="fade-in" class="brief typer black">
+                    {{about.content.name}}，
+                    <vue-typer :text="about.content.desc || ''" :type-delay='200' eraseStyle='select-all'></vue-typer>
+                </span>
+                <!-- 正文 -->
+                <vue-markdown data-aos="fade-in">{{about.content.md}}</vue-markdown>
+                <!-- 关键词 -->
+                <a-row data-aos="fade-in" class="keys-row" type="flex" align="top">
+                    <a-col class="keys-col" v-for="(value, name) in about.keys" v-bind:key="name"
+                           :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
+                        <span class="key">{{name}}:</span>
+                        <a class="value" v-if="isUrl(value)" :href="value" target="_blank">{{value}}</a>
+                        <span v-else>{{value}}</span>
+                    </a-col>
+                </a-row>
+            </a-col>
+        </a-row>
+    </div>
 </template>
 
 <script lang=ts>
 
 import {Vue, Component} from 'vue-property-decorator';
+import { VueTyper } from 'vue-typer';
+import VueMarkdown from 'vue-markdown';
+import ModuleHeader from "@/components/AppModuleHeader/index.vue";
+import ModuleSkeleton from "@/components/AppModuleSkeleton/index.vue";
+@Component({
+  components:{
+      VueMarkdown,
+    VueTyper,
+    ModuleHeader,
+    ModuleSkeleton
+  }
+})
 
-@Component({})
+export default class Home extends Vue {
+  get about(){
+    return JSON.parse(sessionStorage.userData)[0].modules[0]
+  }
 
-export default class  extends Vue {
-
+  isUrl(content: string): boolean {
+                const strRegex = '^(((https|http|ftp|rtsp|mms):)?//)'
+                    + '?(([0-9a-z_!~*\'().&=+$%-]+: )?[0-9a-z_!~*\'().&=+$%-]+@)?' // ftp的user@
+                    + '(([0-9]{1,3}.){3}[0-9]{1,3}' // IP形式的URL- 199.194.52.184
+                    + '|' // 允许IP和DOMAIN（域名）
+                    + '([0-9a-z_!~*\'()-]+.)*' // 域名- www.
+                    + '([0-9a-z][0-9a-z-]{0,61})?[0-9a-z].' // 二级域名
+                    + '[a-z]{2,6})' // first level domain- .com or .museum
+                    + '(:[0-9]{1,4})?' // 端口- :80
+                    + '((/?)|' // a slash isn't required if there is no file name
+                    + '(/[0-9a-z_!~*\'().;?:@&=+$,%#-]+)+/?)$';
+                const re = new RegExp(strRegex);
+                return re.test(content);
+            }
 }
 
 </script>
 
-<style lang='less' scoped></style>
+<style lang='less' scoped>
+.about {
+        .col {
+            padding: 0 1rem;
+        }
+
+        .avatar {
+            display: block;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .title {
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+
+        .brief {
+            display: block;
+            margin: 1rem auto;
+        }
+
+        @media screen and (max-width: @screen-md-min) {
+            .col {
+                padding: 0;
+                &.color-content {
+                    margin-top: 1.5rem;
+                }
+            }
+        }
+
+        .keys-row {
+            margin: 1rem auto;
+
+            .keys-col {
+                margin: .5rem auto;
+                word-break: break-all;
+                padding-right: 1rem;
+
+                .key {
+                    margin-right: .5rem;
+                    font-weight: bold;
+                }
+
+                .value {
+                    color: inherit;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+</style>

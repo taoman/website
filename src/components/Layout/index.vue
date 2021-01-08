@@ -2,8 +2,8 @@
  * @Descripttion: 
  * @Author: taoman
  * @Date: 2020-12-16 14:37:22
- * @LastEditors: yzj
- * @LastEditTime: 2021-01-02 11:10:02
+ * @LastEditors: taoman
+ * @LastEditTime: 2021-01-07 15:08:41
 -->
 <template>
   <div>
@@ -31,11 +31,10 @@
           </a-affix>
           <!-- 正文锚点 -->
           <a-layout-content><div id="anchor-next"></div></a-layout-content>
-          <a-layout-content >
-            <!-- <AppContent></AppContent> -->
-            <Home />
-            <Blog />
-            <Illustration />
+          <a-layout-content v-for="(m,key) in moduleIds" :key="key">
+            <Home v-if="m.name === 'Home'" />
+            <Illustration v-if="m.name === 'Illustration'" />
+            <Blog v-if="m.name === 'Blog'" />
           </a-layout-content>
           <!-- <a-layout-footer><Footer/></a-layout-footer> -->
         </a-layout>
@@ -60,6 +59,7 @@ import Banner from "@/views/Banner.vue";
 import Home from "@/views/Home.vue";
 import Blog from "@/views/blog/index.vue";
 import Illustration from "@/views/illustration/index.vue";
+import { routes } from '@/router'
 @Component({
   components: {
     Banner,
@@ -70,8 +70,13 @@ import Illustration from "@/views/illustration/index.vue";
   }
 })
 export default class extends Vue {
-  moduleIds = ["第一部分", "第二部分"];
+  get moduleIds() {
+        return routes[0]?.children;
+    }
   menuDrawerVisible = false;
+  mounted() {
+    
+  }
   toggleMenuDrawer() {
     this.menuDrawerVisible = !this.menuDrawerVisible;
   }

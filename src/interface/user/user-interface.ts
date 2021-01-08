@@ -3,10 +3,14 @@
  * @Author: taoman
  * @Date: 2021-01-04 13:35:45
  * @LastEditors: taoman
- * @LastEditTime: 2021-01-05 15:29:00
+ * @LastEditTime: 2021-01-07 16:55:10
  */
 export namespace UserInterface{
-export interface Index {
+export interface UserIndex {
+    data: IndexData[];
+  }
+  
+export interface IndexData {
     title: string;
     social: Social;
     banner: Banner;
@@ -25,12 +29,13 @@ export interface Index {
   }
   
   interface Keys {
-    '主页': string;
+    HomePage: string;
   }
   
   interface Content {
     name: string;
     desc: string[];
+    md:string
   }
   
   interface Header {
@@ -38,7 +43,7 @@ export interface Index {
     subtitle: string;
   }
   
-export interface Banner {
+  interface Banner {
     anchor: Anchor;
     title: string;
     desc: string[];
@@ -52,7 +57,5 @@ export interface Banner {
   
   interface Social {
     github: string;
-    twitter: string;
-    linkedin: string;
   }
 }
