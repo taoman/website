@@ -28,7 +28,7 @@
     </div>
 </template>
 <script lang=ts>
-import { Vue, Component } from 'vue-property-decorator'
+import { Vue, Component,Watch } from 'vue-property-decorator'
 import { VueTyper } from 'vue-typer';
 import {UserInterface} from "@/interface/user/user-interface"
 @Component({
@@ -37,9 +37,15 @@ import {UserInterface} from "@/interface/user/user-interface"
     }
 })
 export default class Banner extends Vue {
-    // userData:UserInterface.IndexData[] = []
-    get userData(){
-        return JSON.parse(sessionStorage.userData)[0].banner
+    userData:UserInterface.IndexData[] = []
+    @Watch("$stores.userModel.userData")
+    handData(newVal:any){
+        this.userData = newVal[0].banner
+    }
+    // get userData(){
+    //     return this.$stores.userModel.userData[0]?.banner
+    // }
+    mounted() { 
     }
 }
 </script>
@@ -99,7 +105,7 @@ export default class Banner extends Vue {
 
             h3 {
                 font-size: 1.5em;
-
+                color:#fafafa;
                 .vue-typer {
                     display: inline-block;
                 }

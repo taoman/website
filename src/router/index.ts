@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Home from "../views/Home.vue";
-
+import { stores } from '../store/store-entry';
 Vue.use(VueRouter);
 
 //修改原型对象中的push方法
@@ -65,5 +65,4 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 });
-
 export default router;

@@ -3,7 +3,7 @@
  * @Author: taoman
  * @Date: 2021-01-04 13:14:48
  * @LastEditors: taoman
- * @LastEditTime: 2021-01-06 13:26:17
+ * @LastEditTime: 2021-01-11 10:29:27
  */
 import { UserApi,user } from "./user";
 interface UserType {

@@ -3,7 +3,7 @@
  * @Author: taoman
  * @Date: 2021-01-04 11:30:41
  * @LastEditors: taoman
- * @LastEditTime: 2021-01-07 15:19:36
+ * @LastEditTime: 2021-01-12 11:30:53
  */
 import {
     Module,
@@ -20,17 +20,14 @@ import { $api } from "@/api";
     userData:UserInterface.IndexData[] = []
     @Mutation
     STE_USER_DATA(data:UserInterface.IndexData[]){
-        sessionStorage.userData = JSON.stringify(data)
         this.userData = data
     }
     @Action({ rawError: true })
     @Action
-    async init(){
-      this.getUserData()
-    }
-    @Action
     async getUserData(){
         const res = await $api.user.userIndex()
+        console.log('res',res.data.data);
+        
         this.STE_USER_DATA(res.data.data)
     }
   }

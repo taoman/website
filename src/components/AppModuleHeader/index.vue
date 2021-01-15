@@ -3,7 +3,7 @@
  * @Author: taoman
  * @Date: 2021-01-07 10:44:30
  * @LastEditors: taoman
- * @LastEditTime: 2021-01-07 11:18:08
+ * @LastEditTime: 2021-01-13 16:40:30
 -->
 <template>
    <div class="heading">
@@ -21,12 +21,12 @@ import {Vue, Component,Prop} from 'vue-property-decorator';
 export default class ModuleHeader extends Vue {
     @Prop({
         type:String,
-        default:() => undefined
+        required:true
     })
     title !:string;
     @Prop({
         type:String,
-        default:() => undefined
+        required:true
     })
     subTitle !:string
 }

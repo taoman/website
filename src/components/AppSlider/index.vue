@@ -82,6 +82,10 @@ export default class AppHeader extends Vue {
         }
 
         .menu {
+            text-align: left;
+            li{
+                padding-left: 30%;
+            }
             * {
                 font-size: 1em;
             }

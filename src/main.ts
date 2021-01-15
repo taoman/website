@@ -18,12 +18,23 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]); //使用模组
 //平滑过渡
 import VueSmoothScroll from "vue2-smooth-scroll";
 import VueMarkdown from 'vue-markdown';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 Vue.config.productionTip = false;
+
 import { $api } from "@/api";
 import { stores } from "./store/store-entry";
+
 Vue.prototype.$api = $api;
+
 Vue.prototype.$stores = stores;
 
+AOS.init({
+  once:true,
+  offset:50,
+  delay:100,
+  duration:1000
+})
 Vue.use(Antd, VueAwesomeSwiper);
 Vue.use(VueSmoothScroll);
 Vue.use(VueMarkdown);

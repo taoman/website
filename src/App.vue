@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="app">
     <router-view />
   </div>
 </template>
@@ -11,13 +11,29 @@ import {Vue, Component} from 'vue-property-decorator';
 @Component({})
 
 export default class App extends Vue {
-created() {
-  // this.$stores.userModel.init()
-  console.log(JSON.parse(sessionStorage.userData));
+mounted() {
+ this.$stores.userModel.getUserData()
 }
-
 }
 
 </script>
 
-<style lang='less' scoped></style>
+<style lang='less' scoped>
+#app {
+        text-align: center;
+        color: #2c3e50;
+    }
+
+    #nav {
+        padding: 30px;
+
+        a {
+            font-weight: bold;
+            color: #2c3e50;
+
+            &.router-link-exact-active {
+                color: #42b983;
+            }
+        }
+    }
+</style>

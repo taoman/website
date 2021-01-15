@@ -3,7 +3,7 @@
  * @Author: taoman
  * @Date: 2021-01-04 13:35:45
  * @LastEditors: taoman
- * @LastEditTime: 2021-01-07 16:55:10
+ * @LastEditTime: 2021-01-14 10:29:29
  */
 export namespace UserInterface{
 export interface UserIndex {
@@ -29,7 +29,8 @@ export interface IndexData {
   }
   
   interface Keys {
-    HomePage: string;
+    '主页': string;
+    '博客':string;
   }
   
   interface Content {

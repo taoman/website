@@ -3,11 +3,13 @@
  * @Author: taoman
  * @Date: 2020-12-16 13:24:05
  * @LastEditors: taoman
- * @LastEditTime: 2020-12-24 15:31:51
+ * @LastEditTime: 2021-01-12 16:06:22
  */
 
 module.exports = {
+
     runtimeCompiler: true,
+    productionSourceMap:false,
     css:{
       loaderOptions:{
         less:{

@@ -1,7 +1,8 @@
 {
-  title: "taoman",
+  "data": [{
+    title: "taoman",
     social: {
-      github: "https://github.com/manerfan"
+      github: "https://github.com/taoman"
     },
     banner: {
       anchor: {
@@ -33,9 +34,10 @@
             "落霞与孤鹜齐飞",
             "秋水共长天一色",
           ],
+          md: "鄙人taoman，生于西北，纯北方汉子"
         },
         keys: {
-          "主页": "http://liquanquan.com"
+          HomePage: "http://liquanquan.com"
         },
       },
       {
@@ -50,10 +52,9 @@
           subtitle: "my experience",
         },
         cards: [{
-            title: "阿里巴巴（中国）网络技术有限公司",
-            subtitle: "2018-08 至 今",
-          }
-        ],
+          title: "我爱飞翔教育科技有限公司",
+          subtitle: "2018-2019",
+        }],
       },
       {
         display: true,
@@ -70,5 +71,6 @@
         rss: "https://segmentfault.com/feeds/blog/manerfan",
       },
     ]
-  
+
+  }]
 }
