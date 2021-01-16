@@ -45,8 +45,6 @@ export default class Banner extends Vue {
     // get userData(){
     //     return this.$stores.userModel.userData[0]?.banner
     // }
-    mounted() { 
-    }
 }
 </script>
 
