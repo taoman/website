@@ -23,6 +23,7 @@
                 :md="24"
                 :lg="14"
                 :xl="16"
+                
             >
                 <!-- title -->
                 <span data-aos="fade-in" class="title color-title">{{
@@ -93,7 +94,6 @@ export default class Home extends Vue {
     @Watch("$stores.userModel.userData")
     handData(newVal:any){
         this.about = newVal[0].modules[0]
-        console.log('about',this.about);
     }
     // get about() {
     //     return this.$stores.userModel.userData[0]?.modules[0]

@@ -1,5 +1,5 @@
 <template>
-  <div class="content" id="Illustration">
+  <div class="content" id="Illustration" v-if="experience">
         <ModuleHeader :title="experience.header.title" :sub-title="experience.header.subtitle"/>
         <a-timeline>
             <a-timeline-item data-aos="fade-in" v-for="card in experience.cards" v-bind:key="card.title + card.subtitle">

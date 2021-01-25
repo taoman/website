@@ -15,8 +15,8 @@
             <span class="avatar ant-avatar ant-avatar-circle ant-avatar-image">
                 <img draggable="false" src="../assets/images/avatar.jpg">
             </span>
-            <div>
-                <h1>{{userData.title || 'taoman'}}</h1>
+            <div v-if="userData">
+                <h1 >{{userData.title || 'taoman'}}</h1>
                 <h3 class="typer white">
                     <vue-typer :text="userData.desc || 'taoman'" :type-delay='200' eraseStyle='select-all'></vue-typer>
                 </h3>

@@ -3,7 +3,7 @@
  * @Author: taoman
  * @Date: 2021-01-04 11:30:41
  * @LastEditors: taoman
- * @LastEditTime: 2021-01-12 11:30:53
+ * @LastEditTime: 2021-01-19 11:34:39
  */
 import {
     Module,
@@ -26,7 +26,6 @@ import { $api } from "@/api";
     @Action
     async getUserData(){
         const res = await $api.user.userIndex()
-        console.log('res',res.data.data);
         
         this.STE_USER_DATA(res.data.data)
     }
