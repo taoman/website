@@ -29,6 +29,7 @@ export default class App extends Vue {
     
     mounted() {
         this.$stores.userModel.getUserData()
+        this.$stores.userModel.showHotokoto()
     }
 }
 </script>

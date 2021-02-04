@@ -25,12 +25,12 @@
 
         <!-- 菜单页脚 -->
         <a-layout-footer class="footer">
-            <live2d
+            <!-- <live2d
                 :style="style"
                 :model="[1, 53]"
                 :direction="direction"
                 :size="size"
-            ></live2d>
+            ></live2d> -->
             fotter
             <!-- <a-row type="flex" justify="center" align="middle" :gutter="2">
                 <a-col span="24"><Social color="rgb(136,136,136)" :size="1.2"/></a-col>

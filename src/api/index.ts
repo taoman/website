@@ -3,13 +3,19 @@
  * @Author: taoman
  * @Date: 2021-01-04 13:14:48
  * @LastEditors: taoman
- * @LastEditTime: 2021-01-11 10:29:27
+ * @LastEditTime: 2021-02-04 10:41:15
  */
-import { UserApi,user } from "./user";
-interface UserType {
-    user:UserApi
+import { User} from "./user";
+import { Hitokoto } from "./hitokoto";
+class Module {
+  constructor() {
+    this.user = new User()
+    this.hitokoto = new Hitokoto();
+  }
+  user:User;
+  hitokoto: Hitokoto;
 }
-const $api:UserType = {
-  user
-};
-export { $api,UserApi };
+
+export const module = new Module()
+export interface ApiModule extends Module{}
+

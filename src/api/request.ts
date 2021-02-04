@@ -1,18 +1,23 @@
 /*
- * @Descripttion: 
+ * @Descripttion:
  * @Author: taoman
  * @Date: 2021-01-04 16:14:40
  * @LastEditors: taoman
- * @LastEditTime: 2021-01-11 14:18:08
+ * @LastEditTime: 2021-02-02 16:58:09
  */
 import axios from "axios";
-const request = axios.create({
-    baseURL: "https://www.fastmock.site/mock/054078e88a10e1fb66eee37767df11d8/api/front-end/",
+const request = {
+  user: axios.create({
+    baseURL:
+      "https://www.fastmock.site/mock/054078e88a10e1fb66eee37767df11d8/api/front-end/",
     timeout: 1000
-    // headers: {
-    //   Accept: process.env.VUE_APP_BASE_HEADER
-    // }
-  });
+  }),
+  hitokoto:axios.create({
+    baseURL:
+      "https://v1.hitokoto.cn",
+    timeout: 1000
+  })
+};
 // 添加请求拦截器
 // request.interceptors.request.use(function (config) {
 //     // 在发送请求之前做些什么
@@ -30,4 +35,4 @@ const request = axios.create({
 //     // 对响应错误做点什么
 //     return Promise.reject(error);
 //   });
-export default request
+export default request;

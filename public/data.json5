@@ -29,15 +29,16 @@
           subtitle: "about me",
         },
         content: {
-          name: "垃圾分类站",
+          name: "岳阳楼记",
           desc: [
             "落霞与孤鹜齐飞",
             "秋水共长天一色",
           ],
-          md: "鄙人taoman，生于西北，纯北方汉子"
+          md: "鄙人taoman，纯北方汉子"
         },
         keys: {
-          HomePage: "http://liquanquan.com"
+          "主页": "http://liquanquan.top",
+          "博客": "http://liquanquan.top"
         },
       },
       {
@@ -51,10 +52,23 @@
           title: "experience",
           subtitle: "my experience",
         },
-        cards: [{
+        cards: [
+          {
           title: "我爱飞翔教育科技有限公司",
           subtitle: "2018-2019",
-        }],
+          md: "<<u>创业小青年</u>>\
+          \n\
+          \n路漫漫其修远兮，吾将上下而求索"
+        },
+        {
+          title: "海航科技有限公司",
+          subtitle: "2016-12 至 2018-08",
+          md: "<!--**<u>飞机维修工程师</u>**-->\
+          \n\
+          \n海航是将我引向'互联网'的一艘船\
+          "
+        },
+        ],
       },
       {
         display: true,

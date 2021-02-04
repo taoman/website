@@ -35,6 +35,7 @@ AOS.init({
   delay:100,
   duration:1000
 })
+// store.dispatch("getUserData")
 Vue.use(Antd, VueAwesomeSwiper);
 Vue.use(VueSmoothScroll);
 Vue.use(VueMarkdown);
