@@ -3,7 +3,7 @@
  * @Author: taoman
  * @Date: 2021-01-04 15:12:32
  * @LastEditors: taoman
- * @LastEditTime: 2021-02-04 10:40:25
+ * @LastEditTime: 2021-02-20 14:28:43
  */
 import request from "@/api/request";
 import { UserInterface } from "../../interface/user/user-interface";
@@ -18,6 +18,10 @@ import { UserInterface } from "../../interface/user/user-interface";
 
 export class User{
   userIndex() {
-    return request.user.get<UserInterface.UserIndex>("user");
+    // return request.user.get<UserInterface.UserIndex>("user");
+    return request.env.get<UserInterface.ConfigIndex>("config");
+  }
+  blogIndex() {
+    return request.env.get('user');
   }
 }

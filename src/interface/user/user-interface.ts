@@ -3,14 +3,14 @@
  * @Author: taoman
  * @Date: 2021-01-04 13:35:45
  * @LastEditors: taoman
- * @LastEditTime: 2021-01-14 10:29:29
+ * @LastEditTime: 2021-02-20 14:36:08
  */
 export namespace UserInterface{
 export interface UserIndex {
     data: IndexData[];
   }
   
-export interface IndexData {
+export interface IndexData{
     title: string;
     social: Social;
     banner: Banner;
@@ -58,5 +58,17 @@ export interface IndexData {
   
   interface Social {
     github: string;
+  }
+
+  export  interface ConfigIndex {
+    status: number;
+    mesg: string;
+    data: ConfigDate[];
+  }
+  
+export interface ConfigDate {
+    id: number;
+    key: string;
+    value: string;
   }
 }

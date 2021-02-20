@@ -37,14 +37,12 @@ import {UserInterface} from "@/interface/user/user-interface"
     }
 })
 export default class Banner extends Vue {
-    userData:UserInterface.IndexData[] = []
-    @Watch("$stores.userModel.userData")
-    handData(newVal:any){
-        this.userData = newVal[0].banner
+    // userData:UserInterface.IndexData[] = []
+    get userData(){
+        return this.$stores.userModel.userData?.banner
     }
-    // get userData(){
-    //     return this.$stores.userModel.userData[0]?.banner
-    // }
+    mounted() {
+    }
 }
 </script>
 

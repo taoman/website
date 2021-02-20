@@ -3,19 +3,23 @@
  * @Author: taoman
  * @Date: 2021-01-04 16:14:40
  * @LastEditors: taoman
- * @LastEditTime: 2021-02-02 16:58:09
+ * @LastEditTime: 2021-02-19 16:37:04
  */
 import axios from "axios";
 const request = {
   user: axios.create({
     baseURL:
       "https://www.fastmock.site/mock/054078e88a10e1fb66eee37767df11d8/api/front-end/",
-    timeout: 1000
+    timeout: 2000
   }),
   hitokoto:axios.create({
     baseURL:
       "https://v1.hitokoto.cn",
     timeout: 1000
+  }),
+  env:axios.create({
+    baseURL:"http://localhost:7001/",
+    timeout:10000
   })
 };
 // 添加请求拦截器

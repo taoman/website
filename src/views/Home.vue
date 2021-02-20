@@ -90,15 +90,16 @@ import ModuleSkeleton from '@/components/AppModuleSkeleton/index.vue';
     }
 })
 export default class Home extends Vue {
-    about = []
-    @Watch("$stores.userModel.userData")
-    handData(newVal:any){
-        this.about = newVal[0].modules[0]
-    }
-    // get about() {
-    //     return this.$stores.userModel.userData[0]?.modules[0]
+    // about = []
+    // @Watch("$stores.userModel.userData")
+    // handData(newVal:any){
+    //     this.about = newVal.modules[0]
     // }
+    get about() {
+        return this.$stores.userModel.userData?.modules[0]
+    }
     mounted() {
+
     }
     isUrl(content: string): boolean {
         const strRegex =

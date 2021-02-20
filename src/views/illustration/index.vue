@@ -17,7 +17,7 @@
 
 <script lang=ts>
 
-import {Vue, Component,Watch} from 'vue-property-decorator';
+import {Vue, Component} from 'vue-property-decorator';
 import ModuleHeader from '@/components/AppModuleHeader/index.vue';
 import VueMarkdown from 'vue-markdown';
 @Component({
@@ -28,16 +28,15 @@ import VueMarkdown from 'vue-markdown';
 })
 
 export default class Illustration extends Vue {
-  experience = []
-  @Watch("$stores.userModel.userData")
-    handData(newVal:any){
-        this.experience = newVal[0].modules[1]
-    }
-  // get experience(){
-  //   return this.$stores.userModel.userData[0]?.modules[1]
-  // }
+  // experience = []
+  // @Watch("$stores.userModel.userData")
+  //   handData(newVal:any){
+  //       this.experience = newVal.modules[1]
+  //   }
+  get experience(){
+    return this.$stores.userModel.userData?.modules[1]
+  }
   mounted() {
-    
   }
   
 }

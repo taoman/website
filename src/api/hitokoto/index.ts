@@ -3,11 +3,11 @@
  * @Author: taoman
  * @Date: 2021-02-02 16:52:42
  * @LastEditors: taoman
- * @LastEditTime: 2021-02-04 10:37:35
+ * @LastEditTime: 2021-02-04 11:12:45
  */
 import request from "@/api/request";
 // import { AxiosResponse } from "axios";
-// import { HitokotoInterface } from "../../interface/hitokoto/hitokoto-interface";
+import { HitokotoInterface } from "../../interface/hitokoto/hitokoto-interface";
 
 // export interface HitokotoApi {
 //   showHitokoto: (c: string) => Promise<AxiosResponse<any>>;
@@ -20,6 +20,6 @@ import request from "@/api/request";
 
 export class Hitokoto {
     async showHitokoto(params:string){
-        return request.hitokoto.get('',{params})
+        return request.hitokoto.get<HitokotoInterface.HitokotoIndex[]>('',{params})
     }
 }
