@@ -3,6 +3,7 @@
         <vue-canvas-nest :config="config" :el="'#app'"></vue-canvas-nest>
         
         <router-view />
+        
     </div>
 </template>
 
@@ -22,7 +23,7 @@ export default class App extends Vue {
         color: '255, 0, 0', // 线条颜色
         pointColor: '255, 155, 0', // 节点颜色
         opacity: 1, // 线条透明度
-        count: 100, // 线条数量
+        count: 150, // 线条数量
         zIndex: 0 // 画面层级
     }
 

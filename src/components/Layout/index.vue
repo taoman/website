@@ -3,7 +3,7 @@
  * @Author: taoman
  * @Date: 2020-12-16 14:37:22
  * @LastEditors: taoman
- * @LastEditTime: 2021-01-18 11:32:23
+ * @LastEditTime: 2021-02-23 15:36:40
 -->
 <template>
   <div>
@@ -59,7 +59,8 @@ import Banner from "@/views/Banner.vue";
 import Home from "@/views/Home.vue";
 import Blog from "@/views/blog/index.vue";
 import Illustration from "@/views/illustration/index.vue";
-import { routes } from '@/router'
+import { routes } from '@/router';
+
 @Component({
   components: {
     Banner,

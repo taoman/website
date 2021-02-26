@@ -3,7 +3,7 @@
  * @Author: taoman
  * @Date: 2020-12-16 14:20:33
  * @LastEditors: taoman
- * @LastEditTime: 2021-02-20 15:08:29
+ * @LastEditTime: 2021-02-22 14:16:58
 -->
 <template>
     <div class="Blog content" id="Blog">
@@ -12,7 +12,7 @@
             :sub-title="blog.header.subtitle"
         />
         <!-- <ModuleSkeleton :display="loading" :number="2"/> -->
-        <a-list item-layout="vertical" size="large" :data-source="blogList">
+        <a-list item-layout="vertical" size="large" :pagination="pagination" :data-source="blogList">
             <a-list-item
                 data-aos="fade-in"
                 slot="renderItem"
@@ -29,12 +29,12 @@
                     <a slot="title" :href="item.href">{{ item.title }}</a>
                 </a-list-item-meta>
                 <span class="author">——{{ item.name }}</span>
-                <a-button type="primary" @click="show(item.id)">
+                <!-- <a-button type="primary" @click="show(item.id)">
                     查看
                 </a-button>
                 <a-button type="primary" @click="destory(item.id)">
                     删除
-                </a-button>
+                </a-button> -->
             </a-list-item>
         </a-list>
         <a-modal v-model="visible" title="Basic Modal" @ok="update">
@@ -43,29 +43,30 @@
             :label-col="labelCol"
             :wrapper-col="wrapperCol"
         >
-            <a-form-model-item label="title">
+            <a-form-model-item label="title" prop="title">
                 <a-input v-model="modelForm.title" placeholder="你喜欢的一句话" />
             </a-form-model-item>
-            <a-form-model-item label="name">
+            <a-form-model-item label="name" prop="name">
                 <a-input v-model="modelForm.name" />
             </a-form-model-item>
         </a-form-model>
     </a-modal>
         <a-form-model
             :model="form"
+            ref="form"
             :label-col="labelCol"
             :wrapper-col="wrapperCol"
         >
-            <a-form-model-item label="title">
-                <a-input v-model="form.title" placeholder="你喜欢的一句话" />
+            <a-form-model-item label="content" prop="title">
+                <a-input v-model="form.title" placeholder="留下你喜欢的一句话" />
             </a-form-model-item>
-            <a-form-model-item label="name">
-                <a-input v-model="form.name" />
+            <a-form-model-item label="author" prop="name">
+                <a-input v-model="form.name" placeholder="你的名字" />
             </a-form-model-item>
             <a-form-model-item :wrapper-col="{ span: 14, offset: 4 }">
-                <a-button type="primary" @click="onSubmit"> Create </a-button>
+                <a-button type="primary" @click="onSubmit"> 留言 </a-button>
                 <a-button style="margin-left: 10px" @click="cancel">
-                    Cancel
+                    取消
                 </a-button>
             </a-form-model-item>
         </a-form-model>
@@ -73,11 +74,12 @@
 </template>
 
 <script lang=ts>
-import { Vue, Component } from 'vue-property-decorator'
-import ModuleHeader from '@/components/AppModuleHeader/index.vue'
-import ModuleSkeleton from '@/components/AppModuleSkeleton/index.vue'
-import { HitokotoInterface } from '@/interface/hitokoto/hitokoto-interface'
-import axios from 'axios'
+import { Vue, Component } from 'vue-property-decorator';
+import ModuleHeader from '@/components/AppModuleHeader/index.vue';
+import ModuleSkeleton from '@/components/AppModuleSkeleton/index.vue';
+import { HitokotoInterface } from '@/interface/hitokoto/hitokoto-interface';
+import { FormModel } from 'ant-design-vue';
+import axios from 'axios';
 @Component({
     components: {
         ModuleHeader,
@@ -85,16 +87,12 @@ import axios from 'axios'
     }
 })
 export default class Blog extends Vue {
-    listData = [
-        {
-            title: '银烛秋光冷画屏，轻罗小扇扑流萤。',
-            author: 'taoman'
-        },
-        {
-            title: '心之所想，心之所向',
-            author: 'wenayi'
+    pagination ={
+        // onChange: (page:any) => {
+        //   console.log(page);
+        // },
+        pageSize: 3
         }
-    ]
     blogList = []
     visible = false
     updateId = 0
@@ -123,12 +121,13 @@ export default class Blog extends Vue {
     }
     async blogIndex(){
         const res = await this.$module.user.blogIndex()
-        this.blogList = res.data.data
+        this.blogList = res.data.data.rows
     }
     async onSubmit() {
         let data = this.form
         await axios.post('http://localhost:7001/create', data).then((res) => {
-            console.log(res)
+            (this.$refs.form as FormModel).resetFields()
+            this.blogIndex()
         })
     }
     async show(id:number){
@@ -144,7 +143,6 @@ export default class Blog extends Vue {
         await axios
             .delete(`http://localhost:7001/destory/${id}`)
             .then((res) => {
-                console.log('删除成功')
             })
     }
     async update(){
@@ -155,7 +153,7 @@ export default class Blog extends Vue {
         this.visible = false
     }
     cancel() {
-        this.form = { title: '', name: '' }
+       (this.$refs.form as FormModel).resetFields()
     }
 }
 </script>

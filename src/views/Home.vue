@@ -4,7 +4,7 @@
             :title="about.header.title"
             :sub-title="about.header.subtitle"
         />
-        <ModuleSkeleton :display="true" :number="2" />
+        <!-- <ModuleSkeleton :display="true" :number="2" /> -->
         <a-row type="flex" justify="center" align="top">
             <!-- 头像 -->
             <a-col class="col" :xs="24" :sm="24" :md="24" :lg="10" :xl="8">
