@@ -3,11 +3,24 @@
  * @Author: taoman
  * @Date: 2020-12-16 13:24:05
  * @LastEditors: taoman
- * @LastEditTime: 2021-01-12 16:06:22
+ * @LastEditTime: 2021-03-18 16:56:10
  */
-
+const CompressionWebpackPlugin = require("compression-webpack-plugin")
 module.exports = {
-
+  chainWebpack: config => {
+    // 生产环境，开启js\css压缩
+    if (process.env.NODE_ENV === "production") {
+      config.plugin("compressionPlugin").use(
+        new CompressionWebpackPlugin({
+          algorithm:'gzip',
+          test: /\.(js|css|less)$/, // 匹配文件名
+          threshold: 10240, // 对超过10k的数据压缩
+          minRatio: 0.8,
+          deleteOriginalAssets: true // 删除源文件
+        })
+      );
+    }
+  },
     runtimeCompiler: true,
     productionSourceMap:false,
     css:{

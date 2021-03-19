@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <vue-canvas-nest :config="config" :el="'#app'"></vue-canvas-nest>
-        
+        <WaveItem />
         <router-view />
         
     </div>
@@ -10,11 +10,11 @@
 <script lang=ts>
 import { Vue, Component } from 'vue-property-decorator'
 import vueCanvasNest from 'vue-canvas-nest'
-
+import  WaveItem from '@/components/waves/index.vue'
 @Component({
     components: {
-        vueCanvasNest
-        
+        vueCanvasNest,
+        WaveItem
     }
 })
 export default class App extends Vue {
