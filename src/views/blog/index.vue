@@ -3,7 +3,7 @@
  * @Author: taoman
  * @Date: 2020-12-16 14:20:33
  * @LastEditors: taoman
- * @LastEditTime: 2021-02-22 14:16:58
+ * @LastEditTime: 2021-03-24 13:20:53
 -->
 <template>
     <div class="Blog content" id="Blog">
@@ -117,12 +117,14 @@ export default class Blog extends Vue {
     }
     async getHitokoto() {
         const res = await this.$module.hitokoto.showHitokoto('c')
-        // console.log(res.data)
+        console.log(res.data)
     }
+    
     async blogIndex(){
         const res = await this.$module.user.blogIndex()
         this.blogList = res.data.data.rows
     }
+
     async onSubmit() {
         let data = this.form
         await axios.post('http://localhost:7001/create', data).then((res) => {

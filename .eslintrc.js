@@ -3,7 +3,7 @@
  * @Author: taoman
  * @Date: 2020-12-14 13:56:42
  * @LastEditors: taoman
- * @LastEditTime: 2020-12-14 13:56:45
+ * @LastEditTime: 2021-03-24 13:23:23
  */
 module.exports = {
     root: true,
@@ -49,6 +49,7 @@ module.exports = {
         }
       ],
       "semi": 0,
+      "no-unused-vars":'off',
       "prettier.endOfLine": 0,
       // eslintIntegration: false
       'prettier/prettier': 'off',

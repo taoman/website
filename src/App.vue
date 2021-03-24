@@ -1,6 +1,5 @@
 <template>
     <div id="app">
-        <vue-canvas-nest :config="config" :el="'#app'"></vue-canvas-nest>
         <WaveItem />
         <router-view />
         
@@ -9,23 +8,22 @@
 
 <script lang=ts>
 import { Vue, Component } from 'vue-property-decorator'
-import vueCanvasNest from 'vue-canvas-nest'
 import  WaveItem from '@/components/waves/index.vue'
 @Component({
     components: {
-        vueCanvasNest,
+        // vueCanvasNest,
         WaveItem
     }
 })
 export default class App extends Vue {
-    config = {
-        // 配置
-        color: '255, 0, 0', // 线条颜色
-        pointColor: '255, 155, 0', // 节点颜色
-        opacity: 1, // 线条透明度
-        count: 150, // 线条数量
-        zIndex: 0 // 画面层级
-    }
+    // config = {
+    //     // 配置
+    //     color: '255, 0, 0', // 线条颜色
+    //     pointColor: '255, 155, 0', // 节点颜色
+    //     opacity: 1, // 线条透明度
+    //     count: 150, // 线条数量
+    //     zIndex: 0 // 画面层级
+    // }
 
     
     mounted() {

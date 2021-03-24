@@ -3,7 +3,7 @@
  * @Author: taoman
  * @Date: 2021-01-04 13:35:45
  * @LastEditors: taoman
- * @LastEditTime: 2021-02-20 14:36:08
+ * @LastEditTime: 2021-03-24 14:35:17
  */
 export namespace UserInterface{
 export interface UserIndex {
@@ -42,6 +42,7 @@ export interface IndexData{
   interface Header {
     title: string;
     subtitle: string;
+    md ?:string
   }
   
   interface Banner {

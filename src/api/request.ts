@@ -3,7 +3,7 @@
  * @Author: taoman
  * @Date: 2021-01-04 16:14:40
  * @LastEditors: taoman
- * @LastEditTime: 2021-02-19 16:37:04
+ * @LastEditTime: 2021-03-24 17:02:56
  */
 import axios from "axios";
 const request = {
@@ -15,7 +15,7 @@ const request = {
   hitokoto:axios.create({
     baseURL:
       "https://v1.hitokoto.cn",
-    timeout: 1000
+    timeout: 50000
   }),
   env:axios.create({
     baseURL:"http://localhost:7001/",

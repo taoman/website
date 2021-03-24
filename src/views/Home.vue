@@ -12,7 +12,7 @@
                     data-aos="fade-in"
                     class="avatar"
                     draggable="false"
-                    src="../assets/images/avatar.jpg"
+                    src="../assets/images/rem.jpg"
                 />
             </a-col>
             <!-- 内容 -->
@@ -23,7 +23,6 @@
                 :md="24"
                 :lg="14"
                 :xl="16"
-                
             >
                 <!-- title -->
                 <span data-aos="fade-in" class="title color-title">{{
@@ -76,7 +75,7 @@
 </template>
 
 <script lang=ts>
-import { Vue, Component,Watch } from 'vue-property-decorator';
+import { Vue, Component } from 'vue-property-decorator';
 import { VueTyper } from 'vue-typer';
 import VueMarkdown from 'vue-markdown';
 import ModuleHeader from '@/components/AppModuleHeader/index.vue';
@@ -90,11 +89,6 @@ import ModuleSkeleton from '@/components/AppModuleSkeleton/index.vue';
     }
 })
 export default class Home extends Vue {
-    // about = []
-    // @Watch("$stores.userModel.userData")
-    // handData(newVal:any){
-    //     this.about = newVal.modules[0]
-    // }
     get about() {
         return this.$stores.userModel.userData?.modules[0]
     }
@@ -128,20 +122,21 @@ export default class Home extends Vue {
 
     .avatar {
         display: block;
-        width: 100%;
-        border-radius: 5px;
+        width: 10rem;
+        border-radius: 4rem;
     }
 
     .title {
         letter-spacing: 5px;
         text-transform: uppercase;
     }
-
+    /deep/.aos-init p{
+        line-height: 28px;
+    }
     .brief {
         display: block;
         margin: 1rem auto;
     }
-
     @media screen and (max-width: @screen-md-min) {
         .col {
             padding: 0;

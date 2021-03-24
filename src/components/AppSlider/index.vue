@@ -22,49 +22,22 @@
                 </a-menu-item>
             </a-menu>
         </a-layout-content>
-
         <!-- 菜单页脚 -->
         <a-layout-footer class="footer">
-            <!-- <live2d
-                :style="style"
-                :model="[1, 53]"
-                :direction="direction"
-                :size="size"
-            ></live2d> -->
-            fotter
-            <!-- <a-row type="flex" justify="center" align="middle" :gutter="2">
-                <a-col span="24"><Social color="rgb(136,136,136)" :size="1.2"/></a-col>
-            </a-row>
-            <a-row type="flex" justify="center" align="middle" :gutter="2">
-                <a-col span="24"><Copyrights color="rgb(136,136,136)" :size=".6"/></a-col>
-            </a-row> -->
+            ©苏ICP备2021002358号
         </a-layout-footer>
     </a-layout>
 </template>
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
+import { Component, Vue } from 'vue-property-decorator'
 import { routes } from '@/router'
-import live2d from 'vue-live2d'
 @Component({
-    components: { live2d }
+    components: { }
 })
 export default class AppHeader extends Vue {
     banner = {
         title: 'taoman'
     }
-    // direction = 'left'
-    // style = ''
-    // width = 300
-    // height = 300
-    // size = 300
-    // tips = {
-    //     mouseover: [
-    //         {
-    //             selector: '.vue-live2d',
-    //             texts: ['就这']
-    //         }
-    //     ]
-    // }
     get menus() {
         return routes[0]?.children
     }
@@ -93,7 +66,12 @@ export default class AppHeader extends Vue {
     .footer {
         background-color: white !important;
     }
-
+    .footer{
+        position: fixed;
+        bottom: 0;
+        width: 20rem;
+        text-align: center;
+    }
     .header {
         margin: 2rem auto;
         .avatar {

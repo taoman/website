@@ -4,7 +4,7 @@
         <!-- <div class="bg back"><h1>123456</h1></div> -->
         <!-- 脚贴 -->
         <div class="fork-me">
-            <a class="fork-me-link" href="https://github.com/manerfan/vuesume/wiki" target="_blank">
+            <a class="fork-me-link" href="https://github.com/taoman" target="_blank">
                 <span class="fork-me-text">Docs On GitHub</span>
             </a>
         </div>
@@ -18,30 +18,44 @@
             <div v-if="userData">
                 <h1 >{{userData.title || 'taoman'}}</h1>
                 <h3 class="typer white">
-                    <vue-typer :text="userData.desc || 'taoman'" :type-delay='200' eraseStyle='select-all'></vue-typer>
+                    <vue-typer :text="hotokotoList|| 'taoman'" :type-delay='200' eraseStyle='select-all'></vue-typer>
                 </h3>
             </div>
         </div>
-        <a class="scroll-next animated infinite bounce" href="#anchor-next" v-smooth-scroll>
+        <a class="scroll-next animated infinite bounce" href="#Home" v-smooth-scroll>
             <a-icon type="double-right" />
         </a>
     </div>
 </template>
 <script lang=ts>
-import { Vue, Component,Watch } from 'vue-property-decorator'
+import { Vue, Component } from 'vue-property-decorator'
 import { VueTyper } from 'vue-typer';
-import {UserInterface} from "@/interface/user/user-interface"
+import { HitokotoInterface } from '@/interface/hitokoto/hitokoto-interface';
 @Component({
     components: {
         VueTyper
     }
 })
 export default class Banner extends Vue {
-    // userData:UserInterface.IndexData[] = []
+    hotokotoList:HitokotoInterface.HitokotoData[] = []
     get userData(){
         return this.$stores.userModel.userData?.banner
     }
     mounted() {
+        this.$nextTick(()=>{
+            this.getHitokoto()
+        })
+        
+        setInterval(() => {
+            setTimeout(() => {
+                this.getHitokoto()
+            }, 1000);
+        }, 5000);
+        
+    }
+    async getHitokoto() {
+        const res = await this.$module.hitokoto.showHitokoto('k')
+        this.hotokotoList = res.data.hitokoto
     }
 }
 </script>
