@@ -3,7 +3,7 @@
  * @Author: taoman
  * @Date: 2021-01-04 11:30:41
  * @LastEditors: taoman
- * @LastEditTime: 2021-03-24 16:30:01
+ * @LastEditTime: 2021-03-31 14:58:30
  */
 import {
   Module,
@@ -51,12 +51,12 @@ const BasisData: UserInterface.IndexData = {
         \n\
          始终对事情事物保持敬畏感\n\
          对感兴趣的东西充满好奇心，已然走在了向二次元进阶的道路上。\n\
-         一直以来就想拥有自己的一个网站，脑海中浮现着无数的想法，起初也想和大多数程序员一样做一个博客网站。\n\
+         一直以来就想拥有自己的一个网站，脑海中浮现着无数的想法，起初也想和大多数程序员一样做一个技术博客网站。\n\
          但后面否定了这个想法，因为生活中我们经历过却不复重现的事情太多了。\n\
          所以还是打算做一个生活类的网站，留住一些美好的，自己喜欢的东西，提供一个给我们能稍作休憩的空间。\n\
          所以开始上手并搭建了一个比较简单的静态页面和一些简单的交互操作。\n\
-         这也让我接触上手了一下网站的发布流程，包括域名、云服务器nginx的一些配置。\n\
-         当然，这也可以说是练练手，为以后的版本做准备。"
+         这也让我接触上手了一下网站的发布流程，包括域名、服务器的一些配置。\n\
+         当然这只是练练手，以后会有更好的呈现给大家，敬请期待~。"
       },
       keys: {
         主页: "https://liquanquan.top",
@@ -76,7 +76,7 @@ const BasisData: UserInterface.IndexData = {
       },
       cards: [
         {
-          title: "为商云服",
+          title: "为商",
           subtitle: "2020-至今",
           md:
             "<<u>前端</u>>\
@@ -84,18 +84,18 @@ const BasisData: UserInterface.IndexData = {
           \n路漫漫其修远兮，吾将上下而求索"
         },
         {
-          title: "我爱飞翔教育科技有限公司",
+          title: "我爱飞翔",
           subtitle: "2018-2019",
           md:
             "<<u>创业小青年</u>>\
         \n\
-        \n路漫漫其修远兮，吾将上下而求索"
+        \n人之相知，贵在知心"
         },
         {
-          title: "飞凡创新工作室",
+          title: "飞凡创新",
           subtitle: "2017-2018",
           md:
-            "<<u>乐趣在于航模</u>>\
+            "<<u>享受DIY的乐趣</u>>\
         \n\
         \n指引我方向的一艘船"
         }
@@ -120,13 +120,13 @@ const BasisData: UserInterface.IndexData = {
 @Module({ dynamic: true, store, name: "userStore" })
 export class UserStore extends VuexModule {
   userData: UserInterface.IndexData | null = null;
-  hitokotoData: HitokotoInterface.HitokotoIndex[] = [];
+  hitokotoData: HitokotoInterface.HitokotoData | null = null;
   @Mutation
   SET_USER_DATA(data: UserInterface.IndexData) {
     this.userData = data;
   }
   @Mutation
-  SET_HITOKOTO_DATA(data: HitokotoInterface.HitokotoIndex[]) {
+  SET_HITOKOTO_DATA(data: HitokotoInterface.HitokotoData) {
     this.hitokotoData = data;
   }
   @Action({ rawError: true })
@@ -138,7 +138,7 @@ export class UserStore extends VuexModule {
   }
   @Action
   async showHotokoto() {
-    const res = await module.hitokoto.showHitokoto("c");
+    const res = await module.hitokoto.showHitokoto();
     this.SET_HITOKOTO_DATA(res.data);
   }
 }

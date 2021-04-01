@@ -3,7 +3,7 @@
         <!-- 头像 -->
         <div class="header">
             <span class="avatar ant-avatar ant-avatar-circle ant-avatar-image">
-                <img draggable="false" src="../../assets/images/avatar.jpg" />
+                <img draggable="false" src="https://www.liquanquan.top/assets/images/avatar.jpg" />
             </span>
             <span>{{ banner.name || 'taoman' }}</span>
         </div>
@@ -50,24 +50,25 @@ export default class AppHeader extends Vue {
     //         name:event.key
     //     })
     // }
-    created() {
-    //  this.tips = this.customTips   
-    }
 }
 </script>
 <style lang="less">
 .layout-menu {
     width: 100%;
     height: 100vh;
+    // position: relative;
     // text-align: center;
-
+    .ant-menu-inline, .ant-menu-vertical, .ant-menu-vertical-left{
+        border: none !important;
+    } 
     .header,
     .menu,
     .footer {
         background-color: white !important;
     }
+    
     .footer{
-        position: fixed;
+        position: absolute;
         bottom: 0;
         width: 20rem;
         text-align: center;
@@ -103,7 +104,12 @@ export default class AppHeader extends Vue {
             display: inline-block;
         }
     }
-
+    
+    @media screen and(max-width: @screen-sm-min) {
+        .footer{
+            width: 13rem;
+        }
+    }
     .footer {
         padding: 10px;
         margin-bottom: 1rem;

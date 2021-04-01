@@ -3,7 +3,7 @@
  * @Author: taoman
  * @Date: 2020-12-16 14:37:22
  * @LastEditors: taoman
- * @LastEditTime: 2021-02-23 15:36:40
+ * @LastEditTime: 2021-03-26 13:58:06
 -->
 <template>
   <div>
@@ -41,6 +41,7 @@
       </a-layout>
       <!-- 小屏侧边栏抽屉 -->
       <a-drawer
+      class="drawer"
         placement="left"
         :closable="true"
         :visible="menuDrawerVisible"
@@ -98,7 +99,6 @@ export default class extends Vue {
 .layout-content {
   position: relative;
 }
-
 .sider-menu-trigger {
   position: absolute;
   top: 20px;
@@ -112,7 +112,9 @@ export default class extends Vue {
     left: 276px;
   }
 }
-
+.ant-drawer-body{
+        padding: 0 24px !important;
+    }
 @media screen and (max-width: @screen-sm-min) {
   .layout-sider {
     display: none;

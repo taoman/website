@@ -3,7 +3,7 @@
  * @Author: taoman
  * @Date: 2021-01-04 13:35:45
  * @LastEditors: taoman
- * @LastEditTime: 2021-03-24 14:35:17
+ * @LastEditTime: 2021-03-31 11:52:45
  */
 export namespace UserInterface{
 export interface UserIndex {
@@ -16,7 +16,10 @@ export interface IndexData{
     banner: Banner;
     modules: Module[];
   }
-  
+export interface CreateParameter{
+  title:string;
+  name:string
+}
   interface Module {
     display: boolean;
     anchor: Anchor;

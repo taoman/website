@@ -45,7 +45,7 @@ export default class Illustration extends Vue {
 
 <style lang='less' scoped>
 .content{
-  height: 100vh;
+  // height: 100vh;
   .experience-card {
         .title {
             width: 100%;

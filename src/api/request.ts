@@ -3,7 +3,7 @@
  * @Author: taoman
  * @Date: 2021-01-04 16:14:40
  * @LastEditors: taoman
- * @LastEditTime: 2021-03-24 17:02:56
+ * @LastEditTime: 2021-03-31 17:23:24
  */
 import axios from "axios";
 const request = {
@@ -18,7 +18,7 @@ const request = {
     timeout: 50000
   }),
   env:axios.create({
-    baseURL:"http://localhost:7001/",
+    baseURL:"https://liquanquan.top/api",
     timeout:10000
   })
 };

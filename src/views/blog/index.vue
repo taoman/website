@@ -3,7 +3,7 @@
  * @Author: taoman
  * @Date: 2020-12-16 14:20:33
  * @LastEditors: taoman
- * @LastEditTime: 2021-03-24 13:20:53
+ * @LastEditTime: 2021-03-31 14:47:13
 -->
 <template>
     <div class="Blog content" id="Blog">
@@ -21,11 +21,10 @@
             >
                 <img
                     slot="extra"
-                    width="272"
                     alt="logo"
-                    src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
+                    :src="item.img"
                 />
-                <a-list-item-meta :description="item.description">
+                <a-list-item-meta>
                     <a slot="title" :href="item.href">{{ item.title }}</a>
                 </a-list-item-meta>
                 <span class="author">——{{ item.name }}</span>
@@ -77,7 +76,6 @@
 import { Vue, Component } from 'vue-property-decorator';
 import ModuleHeader from '@/components/AppModuleHeader/index.vue';
 import ModuleSkeleton from '@/components/AppModuleSkeleton/index.vue';
-import { HitokotoInterface } from '@/interface/hitokoto/hitokoto-interface';
 import { FormModel } from 'ant-design-vue';
 import axios from 'axios';
 @Component({
@@ -93,6 +91,7 @@ export default class Blog extends Vue {
         // },
         pageSize: 3
         }
+    img=''
     blogList = []
     visible = false
     updateId = 0
@@ -107,51 +106,44 @@ export default class Blog extends Vue {
         name: ''
     }
     loading = true
-    hotokotoList: HitokotoInterface.HitokotoData[] = []
     get blog() {
         return this.$stores.userModel.userData?.modules[2]
     }
     mounted() {
-        this.getHitokoto()
         this.blogIndex()
-    }
-    async getHitokoto() {
-        const res = await this.$module.hitokoto.showHitokoto('c')
-        console.log(res.data)
     }
     
     async blogIndex(){
         const res = await this.$module.user.blogIndex()
-        this.blogList = res.data.data.rows
+        this.blogList = res;
+        // this.blogList.img = `https://www.liquanquan.top/assets/images/rem${x}.jpg`
     }
 
     async onSubmit() {
         let data = this.form
-        await axios.post('http://localhost:7001/create', data).then((res) => {
-            (this.$refs.form as FormModel).resetFields()
-            this.blogIndex()
-        })
+        const res = await this.$module.user.create(data);
+        (this.$refs.form as FormModel).resetFields()
+        this.blogIndex()
     }
     async show(id:number){
         this.updateId = id
         this.visible = true
-        await axios.get(`http://localhost:7001/show/${id}`).then(res=>{
-            let data = res.data.data;
-            this.modelForm.title = data.title;
-            this.modelForm.name = data.name;
-        })
+        const res = await this.$module.user.show(id)
+        let data = res.data.data
+        this.modelForm.title = data.title;
+        this.modelForm.name = data.name;
     }
     async destory(id: number) {
-        await axios
-            .delete(`http://localhost:7001/destory/${id}`)
-            .then((res) => {
-            })
+        const res = await this.$module.user.destory(id)
+        this.blogIndex()
     }
     async update(){
         let data = this.modelForm
-        await axios.patch(`http://localhost:7001/update/${this.updateId}`,data).then(res=>{
-            console.log(res)
-        })
+        // await axios.patch(`http://localhost:7002/update/${this.updateId}`,data).then(res=>{
+        //     console.log(res)
+        // })
+        const res = await this.$module.user.update(this.updateId,data)
+        this.blogIndex()
         this.visible = false
     }
     cancel() {
@@ -163,6 +155,11 @@ export default class Blog extends Vue {
 <style lang='less' scoped>
 .blog {
     text-align: left;
+}
+img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
 }
 .ant-list-item {
     text-align: center;

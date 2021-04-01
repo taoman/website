@@ -3,9 +3,13 @@
  * @Author: taoman
  * @Date: 2021-02-02 16:59:38
  * @LastEditors: taoman
- * @LastEditTime: 2021-02-03 11:34:13
+ * @LastEditTime: 2021-03-25 10:02:38
  */
 export namespace HitokotoInterface {
+    export interface IndexParameter{
+        c?:string;
+        encode?:string
+    }
     export interface HitokotoIndex {
         data: HitokotoData[];
       }
