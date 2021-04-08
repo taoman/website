@@ -89,7 +89,7 @@ export default class Banner extends Vue {
         left: 0;
         width: 100%;
         height: 100%;
-        background: url('../assets/images/bg_banner.jpg') no-repeat center
+        background: url('../assets/images/bg_banner1.jpg') no-repeat center
             center scroll;
         z-index: -1;
         background-size: cover;
@@ -140,6 +140,17 @@ export default class Banner extends Vue {
         }
     }
     @media screen and(max-width: @screen-sm-min) {
+        .bg{
+            position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('../assets/images/bg_banner1.jpg') no-repeat center
+            center scroll;
+        z-index: -1;
+        background-size: cover;
+        }
         .desc {
             h1 {
                 font-size: 1.5em;

@@ -3,7 +3,7 @@
  * @Author: taoman
  * @Date: 2021-01-04 15:12:32
  * @LastEditors: taoman
- * @LastEditTime: 2021-03-31 14:48:25
+ * @LastEditTime: 2021-04-01 10:45:58
  */
 import request from "@/api/request";
 import { UserInterface } from "../../interface/user/user-interface";
@@ -13,16 +13,7 @@ export class User {
     return request.env.get<UserInterface.ConfigIndex>("config");
   }
   async blogIndex() {
-    // return request.env.get('user');
-    const res = await request.env.get("user");
-    let data = res.data.data.rows;
-    let num = Math.random();
-    num = num * 11;
-    let x = Math.floor(num);
-    data.forEach((res: any) => {
-      res.img = `https://www.liquanquan.top/assets/images/rem${4}.jpg`;
-    });
-    return data;
+    return request.env.get('user');
   }
   create(data: UserInterface.CreateParameter) {
     return request.env.post("create", data);

@@ -3,7 +3,7 @@
  * @Author: taoman
  * @Date: 2021-01-04 13:35:45
  * @LastEditors: taoman
- * @LastEditTime: 2021-03-31 11:52:45
+ * @LastEditTime: 2021-04-01 10:36:22
  */
 export namespace UserInterface{
 export interface UserIndex {
@@ -18,7 +18,8 @@ export interface IndexData{
   }
 export interface CreateParameter{
   title:string;
-  name:string
+  name:string;
+  img_url:string
 }
   interface Module {
     display: boolean;
