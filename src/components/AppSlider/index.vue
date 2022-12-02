@@ -24,7 +24,7 @@
         </a-layout-content>
         <!-- 菜单页脚 -->
         <a-layout-footer class="footer">
-            ©苏ICP备2021002358号
+            <a href="https://beian.miit.gov.cn/" target="_blank">©苏ICP备2021002358号</a>
         </a-layout-footer>
     </a-layout>
 </template>
