@@ -22,7 +22,7 @@ export const routes: Array<RouteConfig> = [
         component: () => import("@/views/Banner.vue"),
         meta: {
           icon: "idcard",
-          title: "Banner"
+          title: "首页"
         }
       },
       {
@@ -31,7 +31,7 @@ export const routes: Array<RouteConfig> = [
         component: () => import("@/views/Home.vue"),
         meta: {
           icon: "idcard",
-          title: "Home"
+          title: "主页"
         }
       },
       {
@@ -40,7 +40,7 @@ export const routes: Array<RouteConfig> = [
         component: () => import("@/views/illustration/index.vue"),
         meta: {
           icon: "ant-cloud",
-          title: "Illustration"
+          title: "过往"
         }
       },
       {
@@ -49,7 +49,7 @@ export const routes: Array<RouteConfig> = [
         component: () => import("@/views/blog/index.vue"),
         meta: {
           icon: "global",
-          title: "Blog"
+          title: "留言板"
         }
       }
     ],

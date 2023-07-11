@@ -5,7 +5,7 @@
             <span class="avatar ant-avatar ant-avatar-circle ant-avatar-image">
                 <img draggable="false" src="https://www.liquanquan.top/assets/images/avatar.jpg" />
             </span>
-            <span>{{ banner.name || 'taoman' }}</span>
+            <span>{{ banner.name || 'Taoman' }}</span>
         </div>
         <!-- 菜单 -->
         <a-layout-content class="menu">

@@ -12,7 +12,7 @@
                     data-aos="fade-in"
                     class="avatar"
                     draggable="false"
-                    src="https://www.liquanquan.top/assets/images/rem0.jpg"
+                    src="https://www.liquanquan.top/assets/images/prem4.jpg"
                 />
             </a-col>
             <!-- 内容 -->

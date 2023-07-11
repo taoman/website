@@ -34,7 +34,7 @@ export interface CreateParameter{
   
   interface Keys {
     '主页': string;
-    '博客':string;
+    '后台模板':string;
   }
   
   interface Content {

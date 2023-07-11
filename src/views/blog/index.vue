@@ -3,7 +3,7 @@
  * @Author: taoman
  * @Date: 2020-12-16 14:20:33
  * @LastEditors: taoman
- * @LastEditTime: 2021-04-06 10:30:19
+ * @LastEditTime: 2023-07-11 15:47:07
 -->
 <template>
     <div class="Blog content" id="Blog">
@@ -60,13 +60,13 @@
             :label-col="labelCol"
             :wrapper-col="wrapperCol"
         >
-            <a-form-model-item label="content" prop="title">
+            <a-form-model-item label="留言" prop="title">
                 <a-input
                     v-model="form.title"
                     placeholder="留下你喜欢的一句话"
                 />
             </a-form-model-item>
-            <a-form-model-item label="author" prop="name">
+            <a-form-model-item label="你的名字" prop="name">
                 <a-input v-model="form.name" placeholder="你的名字" />
             </a-form-model-item>
             <a-form-model-item :wrapper-col="{ span: 14, offset: 4 }">

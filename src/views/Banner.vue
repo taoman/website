@@ -20,7 +20,7 @@
                 <img draggable="false" src="https://www.liquanquan.top/assets/images/avatar.jpg" />
             </span>
             <div v-if="userData">
-                <h1>{{ userData.title || 'taoman' }}</h1>
+                <h1>{{ userData.title || 'Taoman' }}</h1>
                 <h3 class="typer white">
                     <vue-typer
                         :text="hotokotoList || 'taoman'"
