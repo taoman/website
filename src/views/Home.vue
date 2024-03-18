@@ -7,7 +7,7 @@
         <!-- <ModuleSkeleton :display="true" :number="2" /> -->
         <a-row type="flex" justify="center" align="top">
             <!-- 头像 -->
-            <a-col class="col" :xs="24" :sm="24" :md="24" :lg="10" :xl="8">
+            <a-col class="col" :xs="24" :sm="24" :md="24" :lg="10" :xl="8" style="display: flex;justify-content: center;">
                 <img
                     data-aos="fade-in"
                     class="avatar"

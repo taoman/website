@@ -3,7 +3,7 @@
  * @Author: taoman
  * @Date: 2021-01-04 11:30:41
  * @LastEditors: taoman
- * @LastEditTime: 2023-07-11 15:49:55
+ * @LastEditTime: 2024-03-18 11:07:43
  */
 import {
   Module,
@@ -52,16 +52,16 @@ const BasisData: UserInterface.IndexData = {
          始终对事物保持敬畏感\n\
          有过一年半载的创业经历，见过高山，路过湖海，到过荒漠\n\
          后辗转行至江南，兴趣使然，便入前端之行列\n\
-         时间不断沉淀着每个人，当初的小菜鸟现在也能独当一面\n\
+         时间不断沉淀着每个人，当初的菜鸟现在也能独当一面\n\
          创业的经历也能使我更快速的融入团队\n\
          我心犹热爱生活，乐于发现新事物，涉猎新知，与人交流，挑战舒适之境，追求个人成长与进步\n\
          亦愿与他人分享所得知识与经验，共同成长\n\
-         江南的柔情似水使人流连忘返，但家是每个人根深蒂固的纽带、内心的归宿\n\
-         便毅然决定回来，生长在这辽阔的黄土大地上"
+         理想与现实都有，在现实中\n\
+         成为一个能够影响他人、推动社会进步的人，那便是再好不过了"
       },
       keys: {
         主页: "https://liquanquan.top",
-        后台模板: "https://liquanquan.top/vue-admin"
+        vue3后台模板: "https://liquanquan.top/vue-admin"
       }
     },
     {
@@ -77,8 +77,16 @@ const BasisData: UserInterface.IndexData = {
       },
       cards: [
         {
+          title: "翼支付",
+          subtitle: "2023.11-至今",
+          md:
+            "<<u>前端</u>>\
+          \n\
+          \n百尺竿头，更进一步"
+        },
+        {
           title: "雷澜科技",
-          subtitle: "2023-至今",
+          subtitle: "2023.3-2023.10",
           md:
             "<<u>前端</u>>\
           \n\
